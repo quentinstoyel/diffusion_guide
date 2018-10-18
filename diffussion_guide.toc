@@ -1,7 +1,9 @@
 \contentsline {section}{\numberline {1}Tools you'll need}{1}{section.1}
 \contentsline {section}{\numberline {2}Procedure}{1}{section.2}
 \contentsline {section}{\numberline {3}Activation Barriers}{2}{section.3}
+\contentsline {subsection}{\numberline {3.1}Quantum Espresso}{2}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}NEB calculation}{2}{subsubsection.3.1.1}
 \contentsline {section}{\numberline {4}ATAT/Cluster Expansion}{2}{section.4}
 \contentsline {subsection}{\numberline {4.1}How to Calculate ECI's}{5}{subsection.4.1}
 \contentsline {subsection}{\numberline {4.2}Local Cluster Expansion}{5}{subsection.4.2}
-\contentsline {section}{\numberline {5}KMC}{5}{section.5}
+\contentsline {section}{\numberline {5}KMC}{6}{section.5}

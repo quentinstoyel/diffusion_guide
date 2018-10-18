@@ -58,9 +58,24 @@ There are three main steps to performing a Kinetic Monte Carlo (KMC) simulation:
 \section{Activation Barriers}
 The activation barrier is the energy required to move an electron from one lattice site to another, and is a fundamental property defining diffusion rates.  Practically it can be obtained from DFT through the Nudged Elastic Band (NEB) method.  This method inherently requires quite large unit/super cells, running a large number of ground state calculations, and only depends on the ground state energy of the system.  As such, a Pseudo-potential code such as VASP or QE is an appropriate choice over more computationally heavy all electron options (Wien2k, exciting).  \\
 
-It is important to start from a groundstate that has been converged for $E_cut$, k points, mixing beta, smearing, etc.  \\
+
+
+
+\subsection{Quantum Espresso}
+Quantum espresso is a DFT code that can be used to calculate activation barriers through the  nudged elastic band method. It can be relatively easy to install,  download the source code from \url{https://github.com/QEF/q-e/releases}, and extract it to an appropriate directory (eg. ~/Programs).  Then \textbf{\$ ./configure} and \textbf{\$ make all} should run cleanly as indicated in the readme.  Fianlly, add the quantum espresso bin directory to your path, by adding something like the following to your .bashrc file:
+
+\begin{lstlisting}
+export PATH=$PATH:path-to-qe-install/qe-6.3/bin
+\end{lstlisting}
+
+\subsubsection{NEB calculation}
+The main features of quantum espresso are well explained in the documentation and tutorials.  the reader should use these to become accustomed to perform standard convergence tests (k points, ecut, mixing beta, smearing, etc.). It is essential to use converged parameters for the NEB calculating to obtain the correct path.  
 
 NEB works by calculating the energy and forces acting on a single atom in the crystal at various points along a path between two neighbouring lattice sites. By minimizing the forces normal to the path, the lowest energy path can be found.  Some degree of force along the path is also taken into consideration to keep the path length short, giving rise to the ``elastic band" nature of this technique.   
+
+Again this procedure is well explained in the documentation, which can be found here: \url{https://www.quantum-espresso.org/Doc/neb_user_guide.pdf}, along with examples in the /qe-\#\#/NEB/Examples directory.  
+
+NEB paths can be visualized and animated using Xcrysden by calling the --xsf flag:  \textbf{\$ xcrysden --xsf case\_name.axsf }.  
 
 \section{ATAT/Cluster Expansion}
 
